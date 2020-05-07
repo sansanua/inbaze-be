@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "instruments",
+  "collectionName": "currencies",
   "info": {
-    "name": "Instruments"
+    "name": "Currencies"
   },
   "options": {
     "increments": true,
@@ -12,11 +12,14 @@
     "name": {
       "type": "string"
     },
+    "symbol": {
+      "type": "string"
+    },
     "slug": {
       "type": "string"
     },
     "companies": {
-      "via": "instruments",
+      "via": "currencyIncome",
       "collection": "companies"
     }
   }

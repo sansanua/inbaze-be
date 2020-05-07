@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "instruments",
+  "collectionName": "profitabilities",
   "info": {
-    "name": "Instruments"
+    "name": "Profitabilities"
   },
   "options": {
     "increments": true,
@@ -16,7 +16,7 @@
       "type": "string"
     },
     "companies": {
-      "via": "instruments",
+      "via": "profitability",
       "collection": "companies"
     }
   }

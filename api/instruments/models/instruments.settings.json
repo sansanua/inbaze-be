@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instruments",
+  "info": {
+    "name": "instruments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

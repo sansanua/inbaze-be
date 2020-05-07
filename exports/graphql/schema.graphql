@@ -1,151 +1,3 @@
-type Article {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  title: String!
-  content: String!
-  image: UploadFile
-  published_at: Date!
-  category: Category
-}
-
-type ArticleAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type ArticleConnection {
-  values: [Article]
-  groupBy: ArticleGroupBy
-  aggregate: ArticleAggregator
-}
-
-type ArticleConnectionCategory {
-  key: ID
-  connection: ArticleConnection
-}
-
-type ArticleConnectionContent {
-  key: String
-  connection: ArticleConnection
-}
-
-type ArticleConnectionCreated_at {
-  key: DateTime
-  connection: ArticleConnection
-}
-
-type ArticleConnectionId {
-  key: ID
-  connection: ArticleConnection
-}
-
-type ArticleConnectionImage {
-  key: ID
-  connection: ArticleConnection
-}
-
-type ArticleConnectionPublished_at {
-  key: ID
-  connection: ArticleConnection
-}
-
-type ArticleConnectionTitle {
-  key: String
-  connection: ArticleConnection
-}
-
-type ArticleConnectionUpdated_at {
-  key: DateTime
-  connection: ArticleConnection
-}
-
-type ArticleGroupBy {
-  id: [ArticleConnectionId]
-  created_at: [ArticleConnectionCreated_at]
-  updated_at: [ArticleConnectionUpdated_at]
-  title: [ArticleConnectionTitle]
-  content: [ArticleConnectionContent]
-  image: [ArticleConnectionImage]
-  published_at: [ArticleConnectionPublished_at]
-  category: [ArticleConnectionCategory]
-}
-
-input ArticleInput {
-  title: String!
-  content: String!
-  image: ID
-  published_at: Date!
-  category: ID
-}
-
-type Category {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  name: String!
-  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
-}
-
-type CategoryAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type CategoryConnection {
-  values: [Category]
-  groupBy: CategoryGroupBy
-  aggregate: CategoryAggregator
-}
-
-type CategoryConnectionCreated_at {
-  key: DateTime
-  connection: CategoryConnection
-}
-
-type CategoryConnectionId {
-  key: ID
-  connection: CategoryConnection
-}
-
-type CategoryConnectionName {
-  key: String
-  connection: CategoryConnection
-}
-
-type CategoryConnectionUpdated_at {
-  key: DateTime
-  connection: CategoryConnection
-}
-
-type CategoryGroupBy {
-  id: [CategoryConnectionId]
-  created_at: [CategoryConnectionCreated_at]
-  updated_at: [CategoryConnectionUpdated_at]
-  name: [CategoryConnectionName]
-}
-
-input CategoryInput {
-  name: String!
-  articles: [ID]
-}
-
-input createArticleInput {
-  data: ArticleInput
-}
-
-type createArticlePayload {
-  article: Article
-}
-
-input createCategoryInput {
-  data: CategoryInput
-}
-
-type createCategoryPayload {
-  category: Category
-}
-
 input createFileInput {
   data: FileInput
 }
@@ -192,22 +44,6 @@ A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
 """
 scalar DateTime
 
-input deleteArticleInput {
-  where: InputID
-}
-
-type deleteArticlePayload {
-  article: Article
-}
-
-input deleteCategoryInput {
-  where: InputID
-}
-
-type deleteCategoryPayload {
-  category: Category
-}
-
 input deleteFileInput {
   where: InputID
 }
@@ -238,19 +74,6 @@ input deleteUserInput {
 
 type deleteUserPayload {
   user: UsersPermissionsUser
-}
-
-input editArticleInput {
-  title: String
-  content: String
-  image: ID
-  published_at: Date
-  category: ID
-}
-
-input editCategoryInput {
-  name: String
-  articles: [ID]
 }
 
 input editFileInput {
@@ -386,15 +209,9 @@ scalar JSON
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Article | ArticleConnection | ArticleAggregator | ArticleGroupBy | ArticleConnectionId | ArticleConnectionCreated_at | ArticleConnectionUpdated_at | ArticleConnectionTitle | ArticleConnectionContent | ArticleConnectionImage | ArticleConnectionPublished_at | ArticleConnectionCategory | createArticlePayload | updateArticlePayload | deleteArticlePayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
-  createArticle(input: createArticleInput): createArticlePayload
-  updateArticle(input: updateArticleInput): updateArticlePayload
-  deleteArticle(input: deleteArticleInput): deleteArticlePayload
-  createCategory(input: createCategoryInput): createCategoryPayload
-  updateCategory(input: updateCategoryInput): updateCategoryPayload
-  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
   createInstrument(input: createInstrumentInput): createInstrumentPayload
   updateInstrument(input: updateInstrumentInput): updateInstrumentPayload
   deleteInstrument(input: deleteInstrumentInput): deleteInstrumentPayload
@@ -426,12 +243,6 @@ type Mutation {
 }
 
 type Query {
-  article(id: ID!): Article
-  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
-  articlesConnection(sort: String, limit: Int, start: Int, where: JSON): ArticleConnection
-  category(id: ID!): Category
-  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
-  categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): CategoryConnection
   instrument(id: ID!): Instruments
   instruments(sort: String, limit: Int, start: Int, where: JSON): [Instruments]
   instrumentsConnection(sort: String, limit: Int, start: Int, where: JSON): InstrumentsConnection
@@ -460,24 +271,6 @@ input RoleInput {
 
 """A time string with format: HH:mm:ss.SSS"""
 scalar Time
-
-input updateArticleInput {
-  where: InputID
-  data: editArticleInput
-}
-
-type updateArticlePayload {
-  article: Article
-}
-
-input updateCategoryInput {
-  where: InputID
-  data: editCategoryInput
-}
-
-type updateCategoryPayload {
-  category: Category
-}
 
 input updateFileInput {
   where: InputID

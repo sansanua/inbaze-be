@@ -16,8 +16,8 @@
       "type": "text"
     },
     "instruments": {
-      "collection": "instruments",
       "via": "companies",
+      "collection": "instruments",
       "dominant": true
     },
     "investmentCurrency": {

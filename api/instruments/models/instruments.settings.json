@@ -16,8 +16,41 @@
       "type": "string"
     },
     "companies": {
-      "via": "instruments",
-      "collection": "companies"
+      "collection": "companies",
+      "via": "instruments"
+    },
+    "description": {
+      "type": "text"
+    },
+    "currency": {
+      "model": "currencies"
+    },
+    "risk": {
+      "type": "integer",
+      "max": 3
+    },
+    "profitability": {
+      "type": "integer",
+      "max": 3
+    },
+    "complexity": {
+      "type": "integer",
+      "max": 3
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "mainParameters": {
+      "type": "text"
+    },
+    "howGenerateIncome": {
+      "type": "text"
+    },
+    "minusInvestment": {
+      "type": "text"
+    },
+    "plusInvestment": {
+      "type": "text"
     }
   }
 }

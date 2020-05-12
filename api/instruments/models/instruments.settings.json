@@ -16,8 +16,8 @@
       "type": "string"
     },
     "companies": {
-      "via": "instruments",
-      "collection": "companies"
+      "collection": "companies",
+      "via": "instruments"
     },
     "description": {
       "type": "text"
@@ -51,6 +51,10 @@
     },
     "plusInvestment": {
       "type": "text"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

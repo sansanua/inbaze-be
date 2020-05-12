@@ -16,8 +16,8 @@
       "type": "text"
     },
     "instruments": {
-      "via": "companies",
       "collection": "instruments",
+      "via": "companies",
       "dominant": true
     },
     "investmentCurrency": {
@@ -122,6 +122,10 @@
     },
     "aboutCompany": {
       "type": "text"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

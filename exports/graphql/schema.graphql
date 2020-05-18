@@ -506,6 +506,10 @@ type deleteFilePayload {
   file: UploadFile
 }
 
+type deleteGlobalPayload {
+  global: Global
+}
+
 input deleteInstrumentInput {
   where: InputID
 }
@@ -608,6 +612,10 @@ input editFileInput {
   related: [ID]
 }
 
+input editGlobalInput {
+  dollarExchangeRate: Float
+}
+
 input editInstrumentInput {
   name: String
   slug: String
@@ -684,6 +692,17 @@ input FileInput {
 
 type ForgotPassword {
   ok: Boolean
+}
+
+type Global {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  dollarExchangeRate: Float
+}
+
+input GlobalInput {
+  dollarExchangeRate: Float
 }
 
 input InputID {
@@ -873,7 +892,7 @@ scalar JSON
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Companies | CompaniesConnection | CompaniesAggregator | CompaniesAggregatorSum | CompaniesAggregatorAvg | CompaniesAggregatorMin | CompaniesAggregatorMax | CompaniesGroupBy | CompaniesConnectionId | CompaniesConnectionCreated_at | CompaniesConnectionUpdated_at | CompaniesConnectionName | CompaniesConnectionDescription | CompaniesConnectionRisk | CompaniesConnectionComplexity | CompaniesConnectionLiquidity | CompaniesConnectionTypeOfIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionCompanyCommission | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionHistoricalProfitability | CompaniesConnectionCapital | CompaniesConnectionProfitability | CompaniesConnectionAboutCompany | CompaniesConnectionDisabled | createCompanyPayload | updateCompanyPayload | deleteCompanyPayload | Currencies | CurrenciesConnection | CurrenciesAggregator | CurrenciesGroupBy | CurrenciesConnectionId | CurrenciesConnectionCreated_at | CurrenciesConnectionUpdated_at | CurrenciesConnectionName | CurrenciesConnectionSymbol | CurrenciesConnectionSlug | createCurrencyPayload | updateCurrencyPayload | deleteCurrencyPayload | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsAggregatorSum | InstrumentsAggregatorAvg | InstrumentsAggregatorMin | InstrumentsAggregatorMax | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | InstrumentsConnectionDescription | InstrumentsConnectionCurrency | InstrumentsConnectionRisk | InstrumentsConnectionProfitability | InstrumentsConnectionComplexity | InstrumentsConnectionShortDescription | InstrumentsConnectionMainParameters | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionMinusInvestment | InstrumentsConnectionPlusInvestment | InstrumentsConnectionDisabled | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | Profitability | ProfitabilityConnection | ProfitabilityAggregator | ProfitabilityGroupBy | ProfitabilityConnectionId | ProfitabilityConnectionCreated_at | ProfitabilityConnectionUpdated_at | ProfitabilityConnectionName | ProfitabilityConnectionSlug | createProfitabilityPayload | updateProfitabilityPayload | deleteProfitabilityPayload | SubscribeUsers | SubscribeUsersConnection | SubscribeUsersAggregator | SubscribeUsersGroupBy | SubscribeUsersConnectionId | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionUpdated_at | SubscribeUsersConnectionEmail | createSubscribeUserPayload | updateSubscribeUserPayload | deleteSubscribeUserPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Companies | CompaniesConnection | CompaniesAggregator | CompaniesAggregatorSum | CompaniesAggregatorAvg | CompaniesAggregatorMin | CompaniesAggregatorMax | CompaniesGroupBy | CompaniesConnectionId | CompaniesConnectionCreated_at | CompaniesConnectionUpdated_at | CompaniesConnectionName | CompaniesConnectionDescription | CompaniesConnectionRisk | CompaniesConnectionComplexity | CompaniesConnectionLiquidity | CompaniesConnectionTypeOfIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionCompanyCommission | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionHistoricalProfitability | CompaniesConnectionCapital | CompaniesConnectionProfitability | CompaniesConnectionAboutCompany | CompaniesConnectionDisabled | createCompanyPayload | updateCompanyPayload | deleteCompanyPayload | Currencies | CurrenciesConnection | CurrenciesAggregator | CurrenciesGroupBy | CurrenciesConnectionId | CurrenciesConnectionCreated_at | CurrenciesConnectionUpdated_at | CurrenciesConnectionName | CurrenciesConnectionSymbol | CurrenciesConnectionSlug | createCurrencyPayload | updateCurrencyPayload | deleteCurrencyPayload | Global | updateGlobalPayload | deleteGlobalPayload | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsAggregatorSum | InstrumentsAggregatorAvg | InstrumentsAggregatorMin | InstrumentsAggregatorMax | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | InstrumentsConnectionDescription | InstrumentsConnectionCurrency | InstrumentsConnectionRisk | InstrumentsConnectionProfitability | InstrumentsConnectionComplexity | InstrumentsConnectionShortDescription | InstrumentsConnectionMainParameters | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionMinusInvestment | InstrumentsConnectionPlusInvestment | InstrumentsConnectionDisabled | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | Profitability | ProfitabilityConnection | ProfitabilityAggregator | ProfitabilityGroupBy | ProfitabilityConnectionId | ProfitabilityConnectionCreated_at | ProfitabilityConnectionUpdated_at | ProfitabilityConnectionName | ProfitabilityConnectionSlug | createProfitabilityPayload | updateProfitabilityPayload | deleteProfitabilityPayload | SubscribeUsers | SubscribeUsersConnection | SubscribeUsersAggregator | SubscribeUsersGroupBy | SubscribeUsersConnectionId | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionUpdated_at | SubscribeUsersConnectionEmail | createSubscribeUserPayload | updateSubscribeUserPayload | deleteSubscribeUserPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createCompany(input: createCompanyInput): createCompanyPayload
@@ -882,6 +901,8 @@ type Mutation {
   createCurrency(input: createCurrencyInput): createCurrencyPayload
   updateCurrency(input: updateCurrencyInput): updateCurrencyPayload
   deleteCurrency(input: deleteCurrencyInput): deleteCurrencyPayload
+  updateGlobal(input: updateGlobalInput): updateGlobalPayload
+  deleteGlobal: deleteGlobalPayload
   createInstrument(input: createInstrumentInput): createInstrumentPayload
   updateInstrument(input: updateInstrumentInput): updateInstrumentPayload
   deleteInstrument(input: deleteInstrumentInput): deleteInstrumentPayload
@@ -984,6 +1005,7 @@ type Query {
   currency(id: ID!): Currencies
   currencies(sort: String, limit: Int, start: Int, where: JSON): [Currencies]
   currenciesConnection(sort: String, limit: Int, start: Int, where: JSON): CurrenciesConnection
+  global: Global
   instrument(id: ID!): Instruments
   instruments(sort: String, limit: Int, start: Int, where: JSON): [Instruments]
   instrumentsConnection(sort: String, limit: Int, start: Int, where: JSON): InstrumentsConnection
@@ -1093,6 +1115,14 @@ input updateFileInput {
 
 type updateFilePayload {
   file: UploadFile
+}
+
+input updateGlobalInput {
+  data: editGlobalInput
+}
+
+type updateGlobalPayload {
+  global: Global
 }
 
 input updateInstrumentInput {

@@ -108,7 +108,8 @@
       "type": "boolean"
     },
     "minimumInvestmentAmount": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "historicalProfitability": {
       "type": "integer"

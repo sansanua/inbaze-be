@@ -27,7 +27,7 @@ type Companies {
   startYear: Int
   numberOfClients: Int
   onlineInvestmentStatusTracking: Boolean
-  minimumInvestmentAmount: Int
+  minimumInvestmentAmount: Int!
   historicalProfitability: Int
   capital: Int
   profitability: Profitability
@@ -336,7 +336,7 @@ input CompanyInput {
   startYear: Int
   numberOfClients: Int
   onlineInvestmentStatusTracking: Boolean
-  minimumInvestmentAmount: Int
+  minimumInvestmentAmount: Int!
   historicalProfitability: Int
   capital: Int
   profitability: ID

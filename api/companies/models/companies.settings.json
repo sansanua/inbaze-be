@@ -17,16 +17,6 @@
       "via": "companies",
       "dominant": true
     },
-    "investmentCurrency": {
-      "collection": "currencies",
-      "via": "companies",
-      "dominant": true
-    },
-    "currencyIncome": {
-      "collection": "currencies",
-      "via": "companies",
-      "dominant": true
-    },
     "risk": {
       "type": "integer"
     },
@@ -136,6 +126,14 @@
     },
     "descriptionOfCooperation": {
       "type": "richtext"
+    },
+    "investmentCurrency": {
+      "model": "currencies",
+      "via": "investmentCompanies"
+    },
+    "currencyIncome": {
+      "model": "currencies",
+      "via": "incomeCompanies"
     }
   }
 }

@@ -134,6 +134,16 @@
     "currencyIncome": {
       "model": "currencies",
       "via": "incomeCompanies"
+    },
+    "secondInvestmentCurrency": {
+      "model": "currencies",
+      "via": "secondInvestmentCompanies"
+    },
+    "secondMinimumInvestmentAmount": {
+      "type": "integer"
+    },
+    "secondHistoricalProfitability": {
+      "type": "integer"
     }
   }
 }

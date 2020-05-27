@@ -445,6 +445,14 @@ type createRolePayload {
   role: UsersPermissionsRole
 }
 
+input createSubscribeNewsUserInput {
+  data: SubscribeNewsUserInput
+}
+
+type createSubscribeNewsUserPayload {
+  subscribeNewsUser: SubscribeNewsUsers
+}
+
 input createSubscribeUserInput {
   data: SubscribeUserInput
 }
@@ -606,6 +614,14 @@ type deleteRolePayload {
   role: UsersPermissionsRole
 }
 
+input deleteSubscribeNewsUserInput {
+  where: InputID
+}
+
+type deleteSubscribeNewsUserPayload {
+  subscribeNewsUser: SubscribeNewsUsers
+}
+
 input deleteSubscribeUserInput {
   where: InputID
 }
@@ -728,6 +744,10 @@ input editRoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input editSubscribeNewsUserInput {
+  email: String
 }
 
 input editSubscribeUserInput {
@@ -975,7 +995,7 @@ scalar JSON
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Companies | CompaniesConnection | CompaniesAggregator | CompaniesAggregatorSum | CompaniesAggregatorAvg | CompaniesAggregatorMin | CompaniesAggregatorMax | CompaniesGroupBy | CompaniesConnectionId | CompaniesConnectionCreated_at | CompaniesConnectionUpdated_at | CompaniesConnectionName | CompaniesConnectionRisk | CompaniesConnectionComplexity | CompaniesConnectionLiquidity | CompaniesConnectionTypeOfIncome | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionCompanyCommission | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionHistoricalProfitability | CompaniesConnectionCapital | CompaniesConnectionProfitability | CompaniesConnectionAboutCompany | CompaniesConnectionDisabled | CompaniesConnectionImage | CompaniesConnectionDescription | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionInvestmentCurrency | CompaniesConnectionCurrencyIncome | CompaniesConnectionSecondInvestmentCurrency | CompaniesConnectionSecondMinimumInvestmentAmount | CompaniesConnectionSecondHistoricalProfitability | createCompanyPayload | updateCompanyPayload | deleteCompanyPayload | Currencies | CurrenciesConnection | CurrenciesAggregator | CurrenciesGroupBy | CurrenciesConnectionId | CurrenciesConnectionCreated_at | CurrenciesConnectionUpdated_at | CurrenciesConnectionName | CurrenciesConnectionSymbol | CurrenciesConnectionSlug | createCurrencyPayload | updateCurrencyPayload | deleteCurrencyPayload | Global | updateGlobalPayload | deleteGlobalPayload | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsAggregatorSum | InstrumentsAggregatorAvg | InstrumentsAggregatorMin | InstrumentsAggregatorMax | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | InstrumentsConnectionDescription | InstrumentsConnectionCurrency | InstrumentsConnectionRisk | InstrumentsConnectionProfitability | InstrumentsConnectionComplexity | InstrumentsConnectionShortDescription | InstrumentsConnectionMainParameters | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionMinusInvestment | InstrumentsConnectionPlusInvestment | InstrumentsConnectionDisabled | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | Profitability | ProfitabilityConnection | ProfitabilityAggregator | ProfitabilityGroupBy | ProfitabilityConnectionId | ProfitabilityConnectionCreated_at | ProfitabilityConnectionUpdated_at | ProfitabilityConnectionName | ProfitabilityConnectionSlug | createProfitabilityPayload | updateProfitabilityPayload | deleteProfitabilityPayload | RequestUser | RequestUserConnection | RequestUserAggregator | RequestUserGroupBy | RequestUserConnectionId | RequestUserConnectionCreated_at | RequestUserConnectionUpdated_at | RequestUserConnectionName | RequestUserConnectionEmail | createRequestUserPayload | updateRequestUserPayload | deleteRequestUserPayload | SubscribeUsers | SubscribeUsersConnection | SubscribeUsersAggregator | SubscribeUsersGroupBy | SubscribeUsersConnectionId | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionUpdated_at | SubscribeUsersConnectionEmail | createSubscribeUserPayload | updateSubscribeUserPayload | deleteSubscribeUserPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ForgotPassword | Companies | CompaniesConnection | CompaniesAggregator | CompaniesAggregatorSum | CompaniesAggregatorAvg | CompaniesAggregatorMin | CompaniesAggregatorMax | CompaniesGroupBy | CompaniesConnectionId | CompaniesConnectionCreated_at | CompaniesConnectionUpdated_at | CompaniesConnectionName | CompaniesConnectionRisk | CompaniesConnectionComplexity | CompaniesConnectionLiquidity | CompaniesConnectionTypeOfIncome | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionCompanyCommission | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionHistoricalProfitability | CompaniesConnectionCapital | CompaniesConnectionProfitability | CompaniesConnectionAboutCompany | CompaniesConnectionDisabled | CompaniesConnectionImage | CompaniesConnectionDescription | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionInvestmentCurrency | CompaniesConnectionCurrencyIncome | CompaniesConnectionSecondInvestmentCurrency | CompaniesConnectionSecondMinimumInvestmentAmount | CompaniesConnectionSecondHistoricalProfitability | createCompanyPayload | updateCompanyPayload | deleteCompanyPayload | Currencies | CurrenciesConnection | CurrenciesAggregator | CurrenciesGroupBy | CurrenciesConnectionId | CurrenciesConnectionCreated_at | CurrenciesConnectionUpdated_at | CurrenciesConnectionName | CurrenciesConnectionSymbol | CurrenciesConnectionSlug | createCurrencyPayload | updateCurrencyPayload | deleteCurrencyPayload | Global | updateGlobalPayload | deleteGlobalPayload | Instruments | InstrumentsConnection | InstrumentsAggregator | InstrumentsAggregatorSum | InstrumentsAggregatorAvg | InstrumentsAggregatorMin | InstrumentsAggregatorMax | InstrumentsGroupBy | InstrumentsConnectionId | InstrumentsConnectionCreated_at | InstrumentsConnectionUpdated_at | InstrumentsConnectionName | InstrumentsConnectionSlug | InstrumentsConnectionDescription | InstrumentsConnectionCurrency | InstrumentsConnectionRisk | InstrumentsConnectionProfitability | InstrumentsConnectionComplexity | InstrumentsConnectionShortDescription | InstrumentsConnectionMainParameters | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionMinusInvestment | InstrumentsConnectionPlusInvestment | InstrumentsConnectionDisabled | createInstrumentPayload | updateInstrumentPayload | deleteInstrumentPayload | Profitability | ProfitabilityConnection | ProfitabilityAggregator | ProfitabilityGroupBy | ProfitabilityConnectionId | ProfitabilityConnectionCreated_at | ProfitabilityConnectionUpdated_at | ProfitabilityConnectionName | ProfitabilityConnectionSlug | createProfitabilityPayload | updateProfitabilityPayload | deleteProfitabilityPayload | RequestUser | RequestUserConnection | RequestUserAggregator | RequestUserGroupBy | RequestUserConnectionId | RequestUserConnectionCreated_at | RequestUserConnectionUpdated_at | RequestUserConnectionName | RequestUserConnectionEmail | createRequestUserPayload | updateRequestUserPayload | deleteRequestUserPayload | SubscribeNewsUsers | SubscribeNewsUsersConnection | SubscribeNewsUsersAggregator | SubscribeNewsUsersGroupBy | SubscribeNewsUsersConnectionId | SubscribeNewsUsersConnectionCreated_at | SubscribeNewsUsersConnectionUpdated_at | SubscribeNewsUsersConnectionEmail | createSubscribeNewsUserPayload | updateSubscribeNewsUserPayload | deleteSubscribeNewsUserPayload | SubscribeUsers | SubscribeUsersConnection | SubscribeUsersAggregator | SubscribeUsersGroupBy | SubscribeUsersConnectionId | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionUpdated_at | SubscribeUsersConnectionEmail | createSubscribeUserPayload | updateSubscribeUserPayload | deleteSubscribeUserPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | createFilePayload | updateFilePayload | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createCompany(input: createCompanyInput): createCompanyPayload
@@ -995,6 +1015,9 @@ type Mutation {
   createRequestUser(input: createRequestUserInput): createRequestUserPayload
   updateRequestUser(input: updateRequestUserInput): updateRequestUserPayload
   deleteRequestUser(input: deleteRequestUserInput): deleteRequestUserPayload
+  createSubscribeNewsUser(input: createSubscribeNewsUserInput): createSubscribeNewsUserPayload
+  updateSubscribeNewsUser(input: updateSubscribeNewsUserInput): updateSubscribeNewsUserPayload
+  deleteSubscribeNewsUser(input: deleteSubscribeNewsUserInput): deleteSubscribeNewsUserPayload
   createSubscribeUser(input: createSubscribeUserInput): createSubscribeUserPayload
   updateSubscribeUser(input: updateSubscribeUserInput): updateSubscribeUserPayload
   deleteSubscribeUser(input: deleteSubscribeUserInput): deleteSubscribeUserPayload
@@ -1101,6 +1124,9 @@ type Query {
   requestUser(id: ID!): RequestUser
   requestUsers(sort: String, limit: Int, start: Int, where: JSON): [RequestUser]
   requestUsersConnection(sort: String, limit: Int, start: Int, where: JSON): RequestUserConnection
+  subscribeNewsUser(id: ID!): SubscribeNewsUsers
+  subscribeNewsUsers(sort: String, limit: Int, start: Int, where: JSON): [SubscribeNewsUsers]
+  subscribeNewsUsersConnection(sort: String, limit: Int, start: Int, where: JSON): SubscribeNewsUsersConnection
   subscribeUser(id: ID!): SubscribeUsers
   subscribeUsers(sort: String, limit: Int, start: Int, where: JSON): [SubscribeUsers]
   subscribeUsersConnection(sort: String, limit: Int, start: Int, where: JSON): SubscribeUsersConnection
@@ -1182,6 +1208,55 @@ input RoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input SubscribeNewsUserInput {
+  email: String
+}
+
+type SubscribeNewsUsers {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  email: String
+}
+
+type SubscribeNewsUsersAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SubscribeNewsUsersConnection {
+  values: [SubscribeNewsUsers]
+  groupBy: SubscribeNewsUsersGroupBy
+  aggregate: SubscribeNewsUsersAggregator
+}
+
+type SubscribeNewsUsersConnectionCreated_at {
+  key: DateTime
+  connection: SubscribeNewsUsersConnection
+}
+
+type SubscribeNewsUsersConnectionEmail {
+  key: String
+  connection: SubscribeNewsUsersConnection
+}
+
+type SubscribeNewsUsersConnectionId {
+  key: ID
+  connection: SubscribeNewsUsersConnection
+}
+
+type SubscribeNewsUsersConnectionUpdated_at {
+  key: DateTime
+  connection: SubscribeNewsUsersConnection
+}
+
+type SubscribeNewsUsersGroupBy {
+  id: [SubscribeNewsUsersConnectionId]
+  created_at: [SubscribeNewsUsersConnectionCreated_at]
+  updated_at: [SubscribeNewsUsersConnectionUpdated_at]
+  email: [SubscribeNewsUsersConnectionEmail]
 }
 
 input SubscribeUserInput {
@@ -1305,6 +1380,15 @@ input updateRoleInput {
 
 type updateRolePayload {
   role: UsersPermissionsRole
+}
+
+input updateSubscribeNewsUserInput {
+  where: InputID
+  data: editSubscribeNewsUserInput
+}
+
+type updateSubscribeNewsUserPayload {
+  subscribeNewsUser: SubscribeNewsUsers
 }
 
 input updateSubscribeUserInput {

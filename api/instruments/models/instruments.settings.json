@@ -20,7 +20,7 @@
       "collection": "companies"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "currency": {
       "model": "currencies"
@@ -38,19 +38,19 @@
       "max": 3
     },
     "shortDescription": {
-      "type": "text"
+      "type": "richtext"
     },
     "mainParameters": {
-      "type": "text"
+      "type": "richtext"
     },
     "howGenerateIncome": {
-      "type": "text"
+      "type": "richtext"
     },
     "minusInvestment": {
-      "type": "text"
+      "type": "richtext"
     },
     "plusInvestment": {
-      "type": "text"
+      "type": "richtext"
     },
     "disabled": {
       "type": "boolean",

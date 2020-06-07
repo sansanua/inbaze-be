@@ -22,12 +22,12 @@
       "via": "investmentCurrency",
       "collection": "companies"
     },
-    "incomeCompanies": {
-      "via": "currencyIncome",
-      "collection": "companies"
-    },
     "secondInvestmentCompanies": {
       "via": "secondInvestmentCurrency",
+      "collection": "companies"
+    },
+    "incomeCompanies": {
+      "via": "currencyIncome",
       "collection": "companies"
     }
   }

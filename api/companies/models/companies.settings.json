@@ -131,10 +131,6 @@
       "model": "currencies",
       "via": "investmentCompanies"
     },
-    "currencyIncome": {
-      "model": "currencies",
-      "via": "incomeCompanies"
-    },
     "secondInvestmentCurrency": {
       "model": "currencies",
       "via": "secondInvestmentCompanies"
@@ -144,6 +140,11 @@
     },
     "secondHistoricalProfitability": {
       "type": "integer"
+    },
+    "currencyIncome": {
+      "collection": "currencies",
+      "via": "incomeCompanies",
+      "dominant": true
     }
   }
 }

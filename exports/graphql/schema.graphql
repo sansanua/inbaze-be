@@ -24,7 +24,7 @@ type Companies {
   numberOfClients: Int
   onlineInvestmentStatusTracking: Boolean
   minimumInvestmentAmount: Int!
-  historicalProfitability: Int
+  historicalProfitability: String
   capital: Int
   profitability: Profitability
   aboutCompany: String
@@ -37,7 +37,7 @@ type Companies {
   investmentCurrency: Currencies
   secondInvestmentCurrency: Currencies
   secondMinimumInvestmentAmount: Int
-  secondHistoricalProfitability: Int
+  secondHistoricalProfitability: String
   instruments(sort: String, limit: Int, start: Int, where: JSON): [Instruments]
   currencyIncome(sort: String, limit: Int, start: Int, where: JSON): [Currencies]
 }
@@ -57,10 +57,8 @@ type CompaniesAggregatorAvg {
   startYear: Float
   numberOfClients: Float
   minimumInvestmentAmount: Float
-  historicalProfitability: Float
   capital: Float
   secondMinimumInvestmentAmount: Float
-  secondHistoricalProfitability: Float
 }
 
 type CompaniesAggregatorMax {
@@ -69,10 +67,8 @@ type CompaniesAggregatorMax {
   startYear: Float
   numberOfClients: Float
   minimumInvestmentAmount: Float
-  historicalProfitability: Float
   capital: Float
   secondMinimumInvestmentAmount: Float
-  secondHistoricalProfitability: Float
 }
 
 type CompaniesAggregatorMin {
@@ -81,10 +77,8 @@ type CompaniesAggregatorMin {
   startYear: Float
   numberOfClients: Float
   minimumInvestmentAmount: Float
-  historicalProfitability: Float
   capital: Float
   secondMinimumInvestmentAmount: Float
-  secondHistoricalProfitability: Float
 }
 
 type CompaniesAggregatorSum {
@@ -93,10 +87,8 @@ type CompaniesAggregatorSum {
   startYear: Float
   numberOfClients: Float
   minimumInvestmentAmount: Float
-  historicalProfitability: Float
   capital: Float
   secondMinimumInvestmentAmount: Float
-  secondHistoricalProfitability: Float
 }
 
 type CompaniesConnection {
@@ -161,7 +153,7 @@ type CompaniesConnectionDocumentsSecuringRights {
 }
 
 type CompaniesConnectionHistoricalProfitability {
-  key: Int
+  key: String
   connection: CompaniesConnection
 }
 
@@ -266,7 +258,7 @@ type CompaniesConnectionRisksOfLossInvested {
 }
 
 type CompaniesConnectionSecondHistoricalProfitability {
-  key: Int
+  key: String
   connection: CompaniesConnection
 }
 
@@ -366,7 +358,7 @@ input CompanyInput {
   numberOfClients: Int
   onlineInvestmentStatusTracking: Boolean
   minimumInvestmentAmount: Int!
-  historicalProfitability: Int
+  historicalProfitability: String
   capital: Int
   profitability: ID
   aboutCompany: String
@@ -379,7 +371,7 @@ input CompanyInput {
   investmentCurrency: ID
   secondInvestmentCurrency: ID
   secondMinimumInvestmentAmount: Int
-  secondHistoricalProfitability: Int
+  secondHistoricalProfitability: String
   currencyIncome: [ID]
 }
 
@@ -656,7 +648,7 @@ input editCompanyInput {
   numberOfClients: Int
   onlineInvestmentStatusTracking: Boolean
   minimumInvestmentAmount: Int
-  historicalProfitability: Int
+  historicalProfitability: String
   capital: Int
   profitability: ID
   aboutCompany: String
@@ -669,7 +661,7 @@ input editCompanyInput {
   investmentCurrency: ID
   secondInvestmentCurrency: ID
   secondMinimumInvestmentAmount: Int
-  secondHistoricalProfitability: Int
+  secondHistoricalProfitability: String
   currencyIncome: [ID]
 }
 

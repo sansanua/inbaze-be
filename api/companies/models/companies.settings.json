@@ -84,8 +84,7 @@
       "type": "integer"
     },
     "onlineInvestmentStatusTracking": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "minimumInvestmentAmount": {
       "type": "integer",
@@ -143,6 +142,10 @@
       "collection": "currencies",
       "via": "incomeCompanies",
       "dominant": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

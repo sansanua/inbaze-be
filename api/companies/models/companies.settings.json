@@ -62,7 +62,8 @@
       "type": "richtext"
     },
     "payingTaxesIncome": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "documentsSecuringRights": {
       "type": "richtext"
@@ -83,7 +84,8 @@
       "type": "integer"
     },
     "onlineInvestmentStatusTracking": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "minimumInvestmentAmount": {
       "type": "integer",
@@ -101,10 +103,6 @@
     },
     "aboutCompany": {
       "type": "richtext"
-    },
-    "disabled": {
-      "type": "boolean",
-      "default": false
     },
     "image": {
       "model": "file",

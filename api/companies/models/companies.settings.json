@@ -151,9 +151,6 @@
       "type": "string",
       "unique": true,
       "required": false
-    },
-    "metaDescription": {
-      "type": "string"
     }
   }
 }

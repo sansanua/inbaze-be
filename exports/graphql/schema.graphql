@@ -38,7 +38,7 @@ type Companies {
   secondMinimumInvestmentAmount: Int
   secondHistoricalProfitability: String
   disabled: Boolean
-  slug: String
+  slug: String!
   instruments(sort: String, limit: Int, start: Int, where: JSON): [Instruments]
   currencyIncome(sort: String, limit: Int, start: Int, where: JSON): [Currencies]
 }
@@ -380,7 +380,7 @@ input CompanyInput {
   secondHistoricalProfitability: String
   currencyIncome: [ID]
   disabled: Boolean
-  slug: String
+  slug: String!
 }
 
 input createCompanyInput {

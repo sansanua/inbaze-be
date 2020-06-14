@@ -152,9 +152,6 @@
       "unique": true,
       "required": false
     },
-    "metaTitle": {
-      "type": "string"
-    },
     "metaDescription": {
       "type": "string"
     }

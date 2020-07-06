@@ -11,6 +11,9 @@
   "attributes": {
     "email": {
       "type": "string"
+    },
+    "instrument": {
+      "type": "string"
     }
   }
 }
